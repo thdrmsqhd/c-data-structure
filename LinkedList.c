@@ -61,8 +61,8 @@ void deleteNode(Node** head, int value) {
 }
 
 // 특정 값을 가진 노드를 조사
-Node* searchNode(Node** head, int value) {
-	Node * current = *head;
+Node* searchNode(Node* head, int value) {
+	Node * current = head;
 	while (current != NULL) {
 		if (current -> data == value) return current;
 
@@ -116,8 +116,8 @@ void insertEnd(Node** head, int value) {
 }
 
 // 리스트 사이즈 확인
-int size(Node** head) {
-	Node* current = *head;
+int size(Node* head) {
+	Node* current = head;
 	int listSize = 0;
 
 	while (current != NULL) {
@@ -139,7 +139,7 @@ int main() {
 	insertFront(&head, 5);
 	printList(head);
 
-	searchNode(&head, 20);
+	searchNode(head, 20);
 	printList(head);
 
 	deleteNode(&head, 10);
@@ -151,7 +151,7 @@ int main() {
 	insertSelect(&head, 2, 22);
 	printList(head);
 
-	printf("%d", size(&head));
+	printf("%d", size(head));
 
 	return 0;
 }
